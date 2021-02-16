@@ -6,11 +6,12 @@ import classes from './BuildControls.module.scss';
 type BuildControlsProps = {
   ingredientAdded: (type: Ingredient) => void;
   ingredientRemoved: (type: Ingredient) => void;
+  onOrder: () => void;
   disabledInfo: {
     [key: string]: boolean;
   };
   totalPrice: number;
-  puchasable: boolean;
+  purchasable: boolean;
 };
 
 type Controls = {
@@ -30,7 +31,8 @@ const buildControls: React.FC<BuildControlsProps> = ({
   ingredientRemoved,
   disabledInfo,
   totalPrice,
-  puchasable,
+  purchasable,
+  onOrder,
 }) => {
   return (
     <div className={classes.BuildControls}>
@@ -50,8 +52,8 @@ const buildControls: React.FC<BuildControlsProps> = ({
 
       <button
         className={classes.OrderButton}
-        onClick={() => null}
-        disabled={!puchasable}
+        onClick={() => onOrder()}
+        disabled={!purchasable}
       >
         ORDER NOW
       </button>
