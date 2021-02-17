@@ -16,9 +16,9 @@
 }
 
 .Open {
-  transition: translateX(0);
+  transform: translateX(0);
 }
 
 .Close {
-  transition: translateX(-100%);
+  transform: translateX(-100%);
 }

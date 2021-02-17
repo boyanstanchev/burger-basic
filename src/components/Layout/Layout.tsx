@@ -1,16 +1,41 @@
-import { PropsWithChildren } from 'react';
 import classes from './Layout.module.scss';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import Sidebar from '../Navigation/Sidebar/Sidebar';
+import { Component } from 'react';
 
-const layout = (props: PropsWithChildren<any>) => {
-  return (
-    <>
-      <Toolbar />
-      <Sidebar />
-      <main className={classes.content}>{props.children}</main>
-    </>
-  );
+type LayoutState = {
+  showSidebar: boolean;
 };
 
-export default layout;
+type LayoutProps = {};
+
+class Layout extends Component<LayoutProps, LayoutState> {
+  state = {
+    showSidebar: false,
+  };
+
+  sidebarCloseHandler = () => {
+    this.setState({ showSidebar: false });
+  };
+
+  sidebarToggleHandler = () => {
+    this.setState((prevState) => {
+      return { showSidebar: !prevState.showSidebar };
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <Toolbar openSidebar={this.sidebarToggleHandler} />
+        <Sidebar
+          open={this.state.showSidebar}
+          sidebarClose={this.sidebarCloseHandler}
+        />
+        <main className={classes.content}>{this.props.children}</main>
+      </>
+    );
+  }
+}
+
+export default Layout;
