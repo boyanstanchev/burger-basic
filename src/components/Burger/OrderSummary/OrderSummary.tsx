@@ -4,6 +4,7 @@ type OrderSummaryProps = {
   ingredients: {
     [key: string]: number;
   };
+  totalPrice: number;
   purchaseCanceled: () => void;
   puchaseContinue: () => void;
 };
@@ -12,6 +13,7 @@ const orderSummary: React.FC<OrderSummaryProps> = ({
   ingredients,
   purchaseCanceled,
   puchaseContinue,
+  totalPrice,
 }) => {
   const ingredientSummary = Object.keys(ingredients).map((i) => (
     <li key={i}>
@@ -25,6 +27,9 @@ const orderSummary: React.FC<OrderSummaryProps> = ({
       <h3>Your Order</h3>
       <p>Yummy burger with the following ingredients:</p>
       <ul>{ingredientSummary}</ul>
+      <p>
+        <strong>Total Price: ${totalPrice.toFixed(2)}</strong>
+      </p>
       <p>Continue to checkout?</p>
       <Button clicked={purchaseCanceled} btnType={'Danger'}>
         CANCEL

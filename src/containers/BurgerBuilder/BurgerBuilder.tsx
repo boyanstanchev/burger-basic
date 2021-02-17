@@ -133,6 +133,7 @@ class BugerBuilder extends Component {
           <OrderSummary
             purchaseCanceled={this.backdropClosehandler}
             puchaseContinue={this.puchaseContinueHandler}
+            totalPrice={this.state.totalPrice}
             ingredients={this.state.ingredients}
           />
         </Modal>
