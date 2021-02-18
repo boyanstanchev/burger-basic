@@ -7,12 +7,12 @@ type BuildControlProps = {
   removed: () => void;
 };
 
-const buildControl: React.FC<BuildControlProps> = ({
+const buildControl = ({
   label,
   disabled,
   added,
   removed,
-}) => {
+}: BuildControlProps) => {
   return (
     <div className={classes.BuildControl}>
       <div className={classes.Label}>{label}</div>

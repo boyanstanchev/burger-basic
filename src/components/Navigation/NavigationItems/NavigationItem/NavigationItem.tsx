@@ -1,3 +1,4 @@
+import { PropsWithChildren } from 'react';
 import classes from './NavigationItem.module.scss';
 
 type NavigationitemProps = {
@@ -5,11 +6,11 @@ type NavigationitemProps = {
   active: boolean;
 };
 
-const navigationItem: React.FC<NavigationitemProps> = ({
+const navigationItem = ({
   children,
   link,
   active,
-}) => {
+}: PropsWithChildren<NavigationitemProps>) => {
   return (
     <li className={classes.NavigationItem}>
       <a className={active ? 'active' : ''} href={link}>

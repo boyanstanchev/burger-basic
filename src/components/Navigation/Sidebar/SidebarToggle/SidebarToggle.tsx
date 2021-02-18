@@ -4,7 +4,7 @@ type SidebarToggleProps = {
   clicked: () => void;
 };
 
-const sidebarToggle: React.FC<SidebarToggleProps> = ({ clicked }) => {
+const sidebarToggle = ({ clicked }: SidebarToggleProps) => {
   return (
     <div onClick={clicked} className={classes.SidebarToggle}>
       <div></div>

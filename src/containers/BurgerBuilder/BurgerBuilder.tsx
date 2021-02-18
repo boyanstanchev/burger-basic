@@ -4,6 +4,8 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import { Ingredient } from '../../components/Burger/BurgerIngredient/BurgerIngredient';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
+import axios from '../../axios-orders';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 type BurgerBuilderState = {
   ingredients: {
@@ -12,6 +14,7 @@ type BurgerBuilderState = {
   totalPrice: number;
   purchasable: boolean;
   purchasing: boolean;
+  loading: boolean;
 };
 
 const INGREDIENT_PRICES: {
@@ -38,6 +41,7 @@ class BugerBuilder extends Component {
     totalPrice: 4,
     purchasable: false,
     purchasing: false,
+    loading: false,
   };
 
   addIngredientHandler = (type: Ingredient) => {
@@ -112,7 +116,33 @@ class BugerBuilder extends Component {
   };
 
   puchaseContinueHandler = () => {
-    alert('Continue');
+    this.setState({ loading: true });
+
+    const order = {
+      ingredients: this.state.ingredients,
+      price: this.state.totalPrice,
+      customer: {
+        name: 'Boyan Stanchev',
+        adress: {
+          street: 'Aleksi Rilets 17',
+          zipCode: 1756,
+          country: 'Bulgaria',
+        },
+        email: 'bstanchev@arena.com',
+      },
+      deliveryMethod: 'home adress',
+    };
+
+    axios
+      .post('/orders.json', order)
+      .then((res) => {
+        console.log(res);
+        this.setState({ loading: false, purchasing: false });
+      })
+      .catch((error) => {
+        console.log(error);
+        this.setState({ loading: false, purchasing: false });
+      });
   };
 
   render() {
@@ -124,18 +154,26 @@ class BugerBuilder extends Component {
       disabledInfo[key] = disabledInfo[key] <= 0;
     }
 
+    let orderSummary = (
+      <OrderSummary
+        purchaseCanceled={this.backdropClosehandler}
+        puchaseContinue={this.puchaseContinueHandler}
+        totalPrice={this.state.totalPrice}
+        ingredients={this.state.ingredients}
+      />
+    );
+
+    if (this.state.loading) {
+      orderSummary = <Spinner />;
+    }
+
     return (
       <>
         <Modal
           onBackdropClick={this.backdropClosehandler}
           show={this.state.purchasing}
         >
-          <OrderSummary
-            purchaseCanceled={this.backdropClosehandler}
-            puchaseContinue={this.puchaseContinueHandler}
-            totalPrice={this.state.totalPrice}
-            ingredients={this.state.ingredients}
-          />
+          {orderSummary}
         </Modal>
 
         <Burger ingredients={this.state.ingredients} />

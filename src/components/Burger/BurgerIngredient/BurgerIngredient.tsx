@@ -16,9 +16,7 @@ interface BurgerIngredientProps {
   type: Ingredient | BaseIngredients;
 }
 
-const burgerIngredient: React.FC<BurgerIngredientProps> = ({
-  type,
-}) => {
+const burgerIngredient = ({ type }: BurgerIngredientProps) => {
   let ingredient = null;
 
   switch (type) {

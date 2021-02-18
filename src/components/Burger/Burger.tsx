@@ -10,7 +10,7 @@ interface BurgerProps {
   };
 }
 
-const burger: React.FC<BurgerProps> = ({ ingredients }) => {
+const burger = ({ ingredients }: BurgerProps) => {
   let transformedIngredients:
     | JSX.Element[]
     | JSX.Element = Object.keys(ingredients)

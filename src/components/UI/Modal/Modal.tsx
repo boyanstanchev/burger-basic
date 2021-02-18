@@ -8,8 +8,13 @@ type ModalProps = {
 };
 
 class Modal extends Component<ModalProps, {}> {
-  shouldComponentUpdate(nextProps: ModalProps, nextState: {}) {
-    return nextProps.show !== this.props.show;
+  
+
+  shouldComponentUpdate(nextProps: ) {
+    return (
+      nextProps.show !== this.props.show ||
+      nextProps.children !== this.props.children
+    );
   }
 
   render() {

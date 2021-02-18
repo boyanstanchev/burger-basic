@@ -5,7 +5,7 @@ type BackDropProps = {
   onClose: () => void;
 };
 
-const backdrop: React.FC<BackDropProps> = ({ show, onClose }) => {
+const backdrop = ({ show, onClose }: BackDropProps) => {
   return show ? (
     <div onClick={onClose} className={classes.Backdrop}></div>
   ) : null;

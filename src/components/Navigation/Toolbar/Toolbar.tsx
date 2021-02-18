@@ -7,7 +7,7 @@ type ToolbarProps = {
   openSidebar: () => void;
 };
 
-const toolbar: React.FC<ToolbarProps> = ({ openSidebar }) => {
+const toolbar = ({ openSidebar }: ToolbarProps) => {
   return (
     <header className={classes.Toolbar}>
       <SidebarToggle clicked={openSidebar}>MENU</SidebarToggle>

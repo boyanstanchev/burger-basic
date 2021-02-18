@@ -1,7 +1,7 @@
 import classes from './NavigationItems.module.scss';
 import NavigationItem from './NavigationItem/NavigationItem';
 
-const navigationItems: React.FC<{}> = () => {
+const navigationItems = () => {
   return (
     <ul className={classes.NavigationItems}>
       <NavigationItem link="/" active>

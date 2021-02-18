@@ -8,7 +8,7 @@ type SidebarProps = {
   open: boolean;
 };
 
-const sidebar: React.FC<SidebarProps> = ({ sidebarClose, open }) => {
+const sidebar = ({ sidebarClose, open }: SidebarProps) => {
   let sidenarClasses = [classes.Sidebar, classes.Close];
 
   if (open) {

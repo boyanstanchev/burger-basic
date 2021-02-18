@@ -26,14 +26,14 @@ const controls: Controls[] = [
   { label: 'Meat', type: Ingredient.MEAT },
 ];
 
-const buildControls: React.FC<BuildControlsProps> = ({
+const buildControls = ({
   ingredientAdded,
   ingredientRemoved,
   disabledInfo,
   totalPrice,
   purchasable,
   onOrder,
-}) => {
+}: BuildControlsProps) => {
   return (
     <div className={classes.BuildControls}>
       <p>
