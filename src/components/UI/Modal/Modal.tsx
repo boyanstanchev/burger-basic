@@ -1,6 +1,6 @@
 import classes from './Modal.module.scss';
 import Backdrop from '../Backdrop/Backdrop';
-import React, { Component } from 'react';
+import React, { Component, PropsWithChildren } from 'react';
 
 type ModalProps = {
   show: boolean;
@@ -8,9 +8,7 @@ type ModalProps = {
 };
 
 class Modal extends Component<ModalProps, {}> {
-  
-
-  shouldComponentUpdate(nextProps: ) {
+  shouldComponentUpdate(nextProps: PropsWithChildren<ModalProps>) {
     return (
       nextProps.show !== this.props.show ||
       nextProps.children !== this.props.children

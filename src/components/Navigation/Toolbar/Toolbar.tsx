@@ -10,7 +10,7 @@ type ToolbarProps = {
 const toolbar = ({ openSidebar }: ToolbarProps) => {
   return (
     <header className={classes.Toolbar}>
-      <SidebarToggle clicked={openSidebar}>MENU</SidebarToggle>
+      <SidebarToggle clicked={openSidebar} />
       <div style={{ height: '80%' }}>
         <Logo />
       </div>
