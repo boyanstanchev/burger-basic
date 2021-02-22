@@ -7,7 +7,7 @@ type ModalProps = {
   onBackdropClick: () => void;
 };
 
-class Modal extends Component<ModalProps, {}> {
+class Modal extends Component<PropsWithChildren<ModalProps>, {}> {
   shouldComponentUpdate(nextProps: PropsWithChildren<ModalProps>) {
     return (
       nextProps.show !== this.props.show ||
