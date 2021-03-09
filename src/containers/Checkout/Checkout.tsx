@@ -5,10 +5,10 @@ type CheckoutProps = {};
 
 const Checkout = ({}: CheckoutProps) => {
   const [ingredients, setIngredients] = useState({
-    meat: 5,
-    cheese: 5,
-    salad: 5,
-    bacon: 5,
+    meat: 1,
+    cheese: 1,
+    salad: 1,
+    bacon: 1,
   });
 
   return (

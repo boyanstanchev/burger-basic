@@ -1,21 +1,20 @@
 import { PropsWithChildren } from 'react';
+import { NavLink } from 'react-router-dom';
 import classes from './NavigationItem.module.scss';
 
 type NavigationitemProps = {
   link: string;
-  active: boolean;
 };
 
 const NavigationItem = ({
   children,
   link,
-  active,
 }: PropsWithChildren<NavigationitemProps>) => {
   return (
     <li className={classes.NavigationItem}>
-      <a className={active ? 'active' : ''} href={link}>
+      <NavLink to={link} activeClassName="active">
         {children}
-      </a>
+      </NavLink>
     </li>
   );
 };

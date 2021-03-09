@@ -19,9 +19,7 @@ const CheckoutSummary = ({ ingredients }: CheckoutSummaryProps) => {
   return (
     <div className={classes.CheckoutSummary}>
       <h1>Hope it testes well!</h1>
-      <div
-        style={{ width: '300px', height: '300px', margin: 'auto' }}
-      >
+      <div style={{ width: '100%', margin: 'auto' }}>
         <Burger ingredients={ingredients} />
       </div>
 

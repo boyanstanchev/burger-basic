@@ -8,6 +8,7 @@ import axios from '../../axios-orders';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import { AxiosResponse } from 'axios';
+import { RouteComponentProps } from 'react-router-dom';
 
 type BurgerBuilderState = {
   ingredients: {
@@ -28,7 +29,10 @@ const INGREDIENT_PRICES: {
   bacon: 0.7,
 };
 
-class BugerBuilder extends Component<{}, BurgerBuilderState> {
+class BugerBuilder extends Component<
+  RouteComponentProps<{}>,
+  BurgerBuilderState
+> {
   state = {
     ingredients: null as any,
     totalPrice: 4,
@@ -146,6 +150,8 @@ class BugerBuilder extends Component<{}, BurgerBuilderState> {
       .then((res) => {
         console.log(res);
         this.setState({ loading: false, purchasing: false });
+        debugger;
+        this.props.history.push('/checkout');
       })
       .catch((error) => {
         console.log(error);
