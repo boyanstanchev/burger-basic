@@ -6,7 +6,7 @@ type ButtonProps = {
   btnType: 'Success' | 'Danger';
 };
 
-const button = ({
+const Button = ({
   children,
   clicked,
   btnType,
@@ -19,4 +19,4 @@ const button = ({
   </button>
 );
 
-export default button;
+export default Button;

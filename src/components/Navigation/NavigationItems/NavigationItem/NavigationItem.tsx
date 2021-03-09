@@ -6,7 +6,7 @@ type NavigationitemProps = {
   active: boolean;
 };
 
-const navigationItem = ({
+const NavigationItem = ({
   children,
   link,
   active,
@@ -20,4 +20,4 @@ const navigationItem = ({
   );
 };
 
-export default navigationItem;
+export default NavigationItem;

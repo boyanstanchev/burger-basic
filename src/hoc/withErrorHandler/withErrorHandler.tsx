@@ -14,9 +14,7 @@ const withErrorHandler = (
       error: null as any,
     };
 
-    constructor(props: any) {
-      super(props);
-
+    componentDidMount() {
       this.reqInterceptor = axios.interceptors.request.use((req) => {
         this.setState({ error: null });
 

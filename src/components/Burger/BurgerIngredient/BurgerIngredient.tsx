@@ -16,7 +16,7 @@ interface BurgerIngredientProps {
   type: Ingredient | BaseIngredients;
 }
 
-const burgerIngredient = ({ type }: BurgerIngredientProps) => {
+const BurgerIngredient = ({ type }: BurgerIngredientProps) => {
   let ingredient = null;
 
   switch (type) {
@@ -50,4 +50,4 @@ const burgerIngredient = ({ type }: BurgerIngredientProps) => {
   return ingredient;
 };
 
-export default burgerIngredient;
+export default BurgerIngredient;

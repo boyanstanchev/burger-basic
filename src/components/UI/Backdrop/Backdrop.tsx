@@ -5,10 +5,10 @@ type BackDropProps = {
   onClose: () => void;
 };
 
-const backdrop = ({ show, onClose }: BackDropProps) => {
+const Backdrop = ({ show, onClose }: BackDropProps) => {
   return show ? (
     <div onClick={onClose} className={classes.Backdrop}></div>
   ) : null;
 };
 
-export default backdrop;
+export default Backdrop;

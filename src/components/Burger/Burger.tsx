@@ -10,7 +10,7 @@ interface BurgerProps {
   };
 }
 
-const burger = ({ ingredients }: BurgerProps) => {
+const Burger = ({ ingredients }: BurgerProps) => {
   let transformedIngredients:
     | JSX.Element[]
     | JSX.Element = Object.keys(ingredients)
@@ -35,4 +35,4 @@ const burger = ({ ingredients }: BurgerProps) => {
   );
 };
 
-export default burger;
+export default Burger;

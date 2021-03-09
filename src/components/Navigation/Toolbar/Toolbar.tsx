@@ -7,7 +7,7 @@ type ToolbarProps = {
   openSidebar: () => void;
 };
 
-const toolbar = ({ openSidebar }: ToolbarProps) => {
+const Toolbar = ({ openSidebar }: ToolbarProps) => {
   return (
     <header className={classes.Toolbar}>
       <SidebarToggle clicked={openSidebar} />
@@ -22,4 +22,4 @@ const toolbar = ({ openSidebar }: ToolbarProps) => {
   );
 };
 
-export default toolbar;
+export default Toolbar;

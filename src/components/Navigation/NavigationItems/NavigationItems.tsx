@@ -1,7 +1,7 @@
 import classes from './NavigationItems.module.scss';
 import NavigationItem from './NavigationItem/NavigationItem';
 
-const navigationItems = () => {
+const NavigationItems = () => {
   return (
     <ul className={classes.NavigationItems}>
       <NavigationItem link="/" active>
@@ -14,4 +14,4 @@ const navigationItems = () => {
   );
 };
 
-export default navigationItems;
+export default NavigationItems;

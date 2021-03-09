@@ -26,7 +26,7 @@ const controls: Controls[] = [
   { label: 'Meat', type: Ingredient.MEAT },
 ];
 
-const buildControls = ({
+const BuildControls = ({
   ingredientAdded,
   ingredientRemoved,
   disabledInfo,
@@ -61,4 +61,4 @@ const buildControls = ({
   );
 };
 
-export default buildControls;
+export default BuildControls;

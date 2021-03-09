@@ -1,7 +1,7 @@
 import classes from './Logo.module.scss';
 import burgerLogo from '../../assets/images/burger-logo.png';
 
-const logo = () => {
+const Logo = () => {
   return (
     <div className={classes.Logo}>
       <img src={burgerLogo} alt="Burger Logo" />
@@ -9,4 +9,4 @@ const logo = () => {
   );
 };
 
-export default logo;
+export default Logo;

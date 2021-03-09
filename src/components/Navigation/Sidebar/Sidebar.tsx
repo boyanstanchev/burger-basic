@@ -8,7 +8,7 @@ type SidebarProps = {
   open: boolean;
 };
 
-const sidebar = ({ sidebarClose, open }: SidebarProps) => {
+const Sidebar = ({ sidebarClose, open }: SidebarProps) => {
   let sidenarClasses = [classes.Sidebar, classes.Close];
 
   if (open) {
@@ -31,4 +31,4 @@ const sidebar = ({ sidebarClose, open }: SidebarProps) => {
   );
 };
 
-export default sidebar;
+export default Sidebar;

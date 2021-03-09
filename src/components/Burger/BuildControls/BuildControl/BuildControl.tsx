@@ -7,7 +7,7 @@ type BuildControlProps = {
   removed: () => void;
 };
 
-const buildControl = ({
+const BuildControl = ({
   label,
   disabled,
   added,
@@ -30,4 +30,4 @@ const buildControl = ({
   );
 };
 
-export default buildControl;
+export default BuildControl;

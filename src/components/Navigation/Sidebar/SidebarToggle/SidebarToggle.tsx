@@ -4,7 +4,7 @@ type SidebarToggleProps = {
   clicked: () => void;
 };
 
-const sidebarToggle = ({ clicked }: SidebarToggleProps) => {
+const SidebarToggle = ({ clicked }: SidebarToggleProps) => {
   return (
     <div onClick={clicked} className={classes.SidebarToggle}>
       <div></div>
@@ -14,4 +14,4 @@ const sidebarToggle = ({ clicked }: SidebarToggleProps) => {
   );
 };
 
-export default sidebarToggle;
+export default SidebarToggle;
